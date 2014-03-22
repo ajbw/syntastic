@@ -31,6 +31,7 @@ function! SyntaxCheckers_puppet_puppetlint_GetLocList() dict
 
     let makeprg = self.makeprgBuild({
         \ 'args_after':
+        \       '--no-80chars-check --no-names_containing_dash-check ' .
         \       '--log-format "%{KIND} [%{check}] %{message} at %{fullpath}:' .
         \       (s:puppetlint_new ? '%{line}' : '%{linenumber}') . '"' })
 
